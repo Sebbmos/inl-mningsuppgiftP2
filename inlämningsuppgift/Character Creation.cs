@@ -4,22 +4,22 @@ namespace inlämningsuppgift
 {
     public class Character_Creation
     {
-        public string _name;
-        public string _characterClass;
-        public int _damage;
-        public int _hp;
-        public int _maxHP;
-        public int _gold;
+        public string Name;
+        public string CharacterClass;
+        public int Damage;
+        public int Hp;
+        public int MaxHP;
+        public int Gold;
 
 
         public Character_Creation(string name, string characterClass, int hp, int damage, int gold)
         {
-            _name = name;
-            _characterClass = characterClass;
-            _hp = hp;
-            _maxHP = hp;
-            _damage = damage;
-            _gold = gold;
+            Name = name;
+            CharacterClass = characterClass;
+            Hp = hp;
+            MaxHP = hp;
+            Damage = damage;
+            Gold = gold;
 
 
 

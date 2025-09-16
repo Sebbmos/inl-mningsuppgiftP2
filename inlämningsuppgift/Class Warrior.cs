@@ -2,24 +2,27 @@
 
 namespace inlämningsuppgift
 {
-    public class Class_Warrior : Character_Creation
+    public class Warrior
     {
-        //public bool shield = false;
-        public Class_Warrior(string name)
+        public string Name;
+        public int Hp;
+        public int Damage;
+        public int Gold;
+
+
+        public Warrior(string name, int hp, int damage, int gold)
         {
-            characterClass = "Warrior";
-            damage = 25;
-            hp = 150;
-            maxHP = 150;
-            gold = 0;
-
-
-
-
+            Name = name;
+            Hp = hp;
+            Damage = damage;
+            Gold = gold;
         }
 
-
-
+        public void Printstatus()
+        {
+            Console.WriteLine($"{Name} the warrior has {Hp} HP, {Damage} damage, {Gold} gold.");
+        }
 
     }
+
 }
