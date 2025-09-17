@@ -17,8 +17,13 @@
             Gold = gold;
             Mana = mana;
 
-            Console.WriteLine($"{Name} the Mage has {Hp} HP, {Damage} damage, {Gold} gold and {Mana} MP.");
 
+
+        }
+        public void PrintStatusM()
+        {
+
+            Console.WriteLine($"{Name} the Mage has {Hp} HP, {Damage} damage, {Gold} gold and {Mana} MP.");
         }
 
     }
