@@ -18,10 +18,11 @@ namespace inlämningsuppgift
             Gold = gold;
         }
 
-        public void PrintstatusW()
+        public void PrintStatusW()  //test
         {
-            Console.WriteLine($"{Name} the warrior has {Hp} HP, {Damage} damage, {Gold} gold.");
+            Console.WriteLine($"Greetings {Name} the warrior. You have {Hp} HP, {Damage} damage, {Gold} gold.");
         }
+
 
     }
 

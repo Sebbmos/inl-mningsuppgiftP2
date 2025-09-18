@@ -1,30 +1,18 @@
-﻿
-
-namespace inlämningsuppgift
+﻿namespace inlämningsuppgift
 {
     public class Character_Creation
     {
-        public string Name;
-        public string CharacterClass;
-        public int Damage;
-        public int Hp;
-        public int MaxHP;
-        public int Gold;
-
-
-        public Character_Creation(string name, string characterClass, int hp, int damage, int gold)
+        public static Warrior CreateWarrior(string name)
         {
-            Name = name;
-            CharacterClass = characterClass;
-            Hp = hp;
-            MaxHP = hp;
-            Damage = damage;
-            Gold = gold;
-
-
-
+            return new Warrior(name, 150, 25, 0);
 
         }
+
+        public static Mage CreateMage(string name)
+        {
+            return new Mage(name, 110, 15, 0, 200);
+        }
+
     }
 }
 

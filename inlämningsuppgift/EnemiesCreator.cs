@@ -1,8 +1,4 @@
-﻿
-
-using System.Security.Cryptography.X509Certificates;
-
-namespace inlämningsuppgift
+﻿namespace inlämningsuppgift
 {
     public class EnemiesCreator
     {
@@ -10,15 +6,15 @@ namespace inlämningsuppgift
 
         public string Name;
         public int Hp;
-        public string Damage;
+        public int Damage;
         public int GoldReward;
 
 
 
 
-        public string[] Enemies = { "evilRat", "Guard", "Thug", "Skeleton", "The Jailor", "JavaJack" };
+        public string[] Enemies = { "EvilRat", "Guard", "Thug", "Skeleton", "The Jailor", "JavaJack" };
 
-        public EnemiesCreator(string name, int hp, string damage, int goldReward, string[] enemies)
+        public EnemiesCreator(string name, int hp, int damage, int goldReward, string[] enemies)
         {
             Name = name;
             Hp = hp;
@@ -26,19 +22,19 @@ namespace inlämningsuppgift
             GoldReward = goldReward;
             Enemies = enemies;
 
-           
+
 
         }
-        public Enemy()
+        public EnemiesCreator()
         {
             Random rndm = new Random();
 
-            int next = rndm.Next(EnemiesCreator)
+            int next = rndm.Next(Enemies.Length);
 
-                EnemyName = Enemies[i];
+            Name = Enemies[next];
 
 
-            switch (Enemies)
+            switch (Name)
             {
 
                 case "EvilRat":
@@ -62,7 +58,7 @@ namespace inlämningsuppgift
                     Damage = 23;
                     GoldReward = 23;
                     break;
-                case "The jailor":
+                case "The Jailor":
                     Hp = 100;
                     Damage = 34;
                     GoldReward = 100;
@@ -70,14 +66,14 @@ namespace inlämningsuppgift
                 case "JavaJack":
                     Hp = 1;
                     Damage = 0;
-                    Goldreward = 100;
-
+                    GoldReward = 100;
+                    break;
 
 
             }
 
         }
-         
+
 
     }
 }

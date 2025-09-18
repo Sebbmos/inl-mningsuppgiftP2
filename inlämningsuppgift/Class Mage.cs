@@ -20,10 +20,10 @@
 
 
         }
-        public void PrintStatusM()
+        public void PrintStatusM()   // test
         {
 
-            Console.WriteLine($"{Name} the Mage has {Hp} HP, {Damage} damage, {Gold} gold and {Mana} MP.");
+            Console.WriteLine($" Greetings {Name} the Mage. You have {Hp} HP, {Damage} damage, {Gold} gold and {Mana} MP.");
         }
 
     }
