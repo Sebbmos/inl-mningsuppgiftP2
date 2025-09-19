@@ -2,28 +2,34 @@
 {
     public class Mage
     {
-        public int Mana;
+
         public string Name;
-        public int Hp;
+        public int HP;
+        public int MaxHP;
         public int Damage;
         public int Gold;
 
 
-        public Mage(string name, int hp, int damage, int gold, int mana)
+        public Mage(string name, int hp, int damage, int gold)
         {
             Name = name;
-            Hp = hp;
+            HP = hp;
+            MaxHP = hp;
             Damage = damage;
             Gold = gold;
-            Mana = mana;
+
 
 
 
         }
-        public void PrintStatusM()   // test
+        //Status för mage
+        public void PrintStatusM()
         {
 
-            Console.WriteLine($" Greetings {Name} the Mage. You have {Hp} HP, {Damage} damage, {Gold} gold and {Mana} MP.");
+            Console.WriteLine($"{Name} the Mage. You have {HP}/{MaxHP} HP, {Damage} damage, {Gold} gold.");
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey();
+
         }
 
     }

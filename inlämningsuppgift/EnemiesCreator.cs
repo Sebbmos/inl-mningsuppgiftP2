@@ -4,9 +4,9 @@
     {
 
 
-        public string Name;
-        public int Hp;
-        public int Damage;
+        public string EnemyName;
+        public int EnemyHp;
+        public int EnemyDamage;
         public int GoldReward;
 
 
@@ -16,9 +16,9 @@
 
         public EnemiesCreator(string name, int hp, int damage, int goldReward, string[] enemies)
         {
-            Name = name;
-            Hp = hp;
-            Damage = damage;
+            EnemyName = name;
+            EnemyHp = hp;
+            EnemyDamage = damage;
             GoldReward = goldReward;
             Enemies = enemies;
 
@@ -31,41 +31,48 @@
 
             int next = rndm.Next(Enemies.Length);
 
-            Name = Enemies[next];
+            EnemyName = Enemies[next];
 
+            //enemy skapare
 
-            switch (Name)
+            switch (EnemyName)
             {
 
                 case "EvilRat":
-                    Hp = 10;
-                    Damage = 8;
+                    Console.WriteLine("SQUEEEK!");
+                    EnemyHp = 10;
+                    EnemyDamage = 8;
                     GoldReward = 0;
                     break;
 
                 case "Guard":
-                    Hp = 50;
-                    Damage = 25;
+                    Console.WriteLine("When did you wake up? Cmere or i'll cut you down!");
+                    EnemyHp = 50;
+                    EnemyDamage = 25;
                     GoldReward = 20;
                     break;
                 case "Thug":
-                    Hp = 65;
-                    Damage = 17;
+                    Console.WriteLine("I tought I would find some gold here.. I'll just have to loot your corpse.");
+                    EnemyHp = 65;
+                    EnemyDamage = 17;
                     GoldReward = 16;
                     break;
                 case "Skeleton":
-                    Hp = 70;
-                    Damage = 23;
+                    Console.WriteLine("you look at the lifeless skeleton. it doesn't speak but you know it will try to kill you.");
+                    EnemyHp = 70;
+                    EnemyDamage = 23;
                     GoldReward = 23;
                     break;
                 case "The Jailor":
-                    Hp = 100;
-                    Damage = 34;
+                    Console.WriteLine("Ah. I see you are awake, I have plans for you so either you stay here living or dead.");
+                    EnemyHp = 100;
+                    EnemyDamage = 34;
                     GoldReward = 100;
                     break;
                 case "JavaJack":
-                    Hp = 1;
-                    Damage = 0;
+                    Console.WriteLine("Please.. I've been here for so many years. Please just end it I cannot take it anymore.");
+                    EnemyHp = 1;
+                    EnemyDamage = 0;
                     GoldReward = 100;
                     break;
 

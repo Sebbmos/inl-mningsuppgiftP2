@@ -5,7 +5,8 @@ namespace inlämningsuppgift
     public class Warrior
     {
         public string Name;
-        public int Hp;
+        public int HP;
+        public int MaxHP;
         public int Damage;
         public int Gold;
 
@@ -13,14 +14,18 @@ namespace inlämningsuppgift
         public Warrior(string name, int hp, int damage, int gold)
         {
             Name = name;
-            Hp = hp;
+            HP = hp;
+            MaxHP = hp;
             Damage = damage;
             Gold = gold;
         }
+        // Status för warrior
 
-        public void PrintStatusW()  //test
+        public void PrintStatusW()
         {
-            Console.WriteLine($"Greetings {Name} the warrior. You have {Hp} HP, {Damage} damage, {Gold} gold.");
+            Console.WriteLine($"{Name} the warrior. You have {HP}/{MaxHP} HP, {Damage} damage, {Gold} gold.");
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey();
         }
 
 
