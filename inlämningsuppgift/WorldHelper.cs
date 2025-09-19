@@ -41,11 +41,11 @@
         public static void StartGame(object player)
         {               // Start av spel och konflikt
             Console.Clear();
-            Console.WriteLine("You open the door and step into the next room.");
+            Console.WriteLine("You open the door and step into the next room.\n");
 
             EnemiesCreator enemy = new EnemiesCreator();
-            Console.WriteLine($"You see {enemy.EnemyName} infront of you!");
-            Console.WriteLine($"{enemy.EnemyName} haves {enemy.EnemyHp}HP and {enemy.EnemyDamage} damage.");
+            Console.WriteLine($"You see {enemy.EnemyName} infront of you!\n");
+            Console.WriteLine($"{enemy.EnemyName} haves {enemy.EnemyHp}HP and {enemy.EnemyDamage} damage.\n");
             Console.WriteLine("What will you do now?");
 
             bool fight = true;
@@ -60,43 +60,68 @@
                     if (player is Warrior w)
                     {
                         enemy.EnemyHp -= w.Damage;
-                        Console.WriteLine($"{w.Name} hits {enemy.EnemyName} for {w.Damage}");
-                        Console.WriteLine($"Enemy HP:{enemy.EnemyHp}");
+                        Console.WriteLine($"{w.Name} hits {enemy.EnemyName} for {w.Damage}\n");
+                        Console.WriteLine($"Enemy HP:{enemy.EnemyHp}\n");
                     }
                     else if (player is Mage m)
                     {
                         enemy.EnemyHp -= m.Damage;
-                        Console.WriteLine($"{m.Name} cast a spell {enemy.EnemyName} for {m.Damage}");
-                        Console.WriteLine($"Enemy HP:{enemy.EnemyHp}");
+                        Console.WriteLine($"{m.Name} cast a spell {enemy.EnemyName} for {m.Damage}\n");
+                        Console.WriteLine($"Enemy HP:{enemy.EnemyHp}\n");
                     }
 
                     if (enemy.EnemyHp <= 0)
                     {
-                        Console.WriteLine($"{enemy.EnemyName} was defeated! You looted {enemy.GoldReward} gold.");
+                        Console.WriteLine($"{enemy.EnemyName} was defeated! You looted {enemy.GoldReward} gold.\n");
                         if (player is Warrior w2) w2.Gold += enemy.GoldReward;
                         else if (player is Mage m2) m2.Gold += enemy.GoldReward;
+                        Console.WriteLine("Press any key to return to menu");
+                        Console.ReadKey();
                         fight = false;
+
                     }
                     else
                     {
                         if (player is Warrior w3)
                         {
                             w3.HP -= enemy.EnemyDamage;
-                            Console.WriteLine($"{enemy.EnemyName} hits you for {enemy.EnemyDamage}!");
-                            Console.WriteLine($"{w3.Name} HP:{w3.HP}");
+                            Console.WriteLine($"{enemy.EnemyName} hits you for {enemy.EnemyDamage}!\n");
+                            Console.WriteLine($"{w3.Name} HP:{w3.HP}\n");
                             if (w3.HP <= 0)
                             {
                                 Console.WriteLine("You fell to the ground and there will your remains stay.");
-                                Console.WriteLine("GAME OVER.");
-                                return;
+                                Console.WriteLine("-------------------GAME OVER.---------------------------\n");
+                                Console.WriteLine("Press any key");
+
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+
+                        }
+                        else if (player is Mage m3)
+                        {
+                            m3.HP -= enemy.EnemyDamage;
+                            Console.WriteLine($"{enemy.EnemyName} hits you for {enemy.EnemyDamage}!\n");
+                            Console.WriteLine($"{m3.Name} HP:{m3.HP}\n");
+                            if (m3.HP <= 0)
+                            {
+                                Console.WriteLine("You fell to the ground and there will your remains stay.\n");
+                                Console.WriteLine("GAME OVER.\n");
+                                Console.WriteLine("Press any key");
+
+                                Console.ReadKey();
+                                Environment.Exit(0);
                             }
                         }
                     }
+
                 }                                       //PS. jag hatar else if 
                 else if (choice == 2)
                 {
-                    Console.WriteLine("You turned your back and run back to the previous room.");
+                    Console.WriteLine("You turned your back and run back to the previous room.\n");
                     fight = false;
+                    Console.WriteLine("Press any key to return to menu");
+                    Console.ReadKey();
 
                 }
                 else
