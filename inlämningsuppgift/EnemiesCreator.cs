@@ -11,20 +11,10 @@
 
 
 
-
+        //fiender                                                                         Jack räknas som en loot goblin
         public string[] Enemies = { "EvilRat", "Guard", "Thug", "Skeleton", "The Jailor", "JavaJack" };
 
-        public EnemiesCreator(string name, int hp, int damage, int goldReward, string[] enemies)
-        {
-            EnemyName = name;
-            EnemyHp = hp;
-            EnemyDamage = damage;
-            GoldReward = goldReward;
-            Enemies = enemies;
 
-
-
-        }
         public EnemiesCreator()
         {
             Random rndm = new Random();
